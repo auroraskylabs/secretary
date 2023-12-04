@@ -9,7 +9,7 @@
       </div>
       <div class="col-md-9">
         <div class="row margin-t-b-1">
-          <p style="color: white; margin: 3% 0% 3% 0%; font-size: 150%;">Create a new secret</p>
+          <p style="color: white; margin: 3% 0% 3% 0%; font-size: 150%;">Encrypt a Phrase</p>
           <div class="col-sm-6">
             <label for="startDate">📅 Available from</label>
             <input id="startDate" formControlName="startDate" name="startDate" type="datetime-local" class="form-control">
@@ -120,97 +120,11 @@
   </form>
 </div>
 
-<div *ngIf="!this.showResult" class="row">
-  <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
-    <div class="card bg-c-blue order-card">
-      <div class="card-block">
-        <h6 class="m-b-20">🔑 Why secretary?</h6>
-        <hr>
-        <ul>
-          <li>
-            <p>The Secretary always encrypts your secret on the backend and never store access keys anywhere</p>
-          </li>
-          <li>
-            <p>Avoid sharing sensitive information via email or social networks</p>
-          </li>
-          <li>
-            <p>Get more control over the secret you share</p>
-          </li>
-          <li>
-            <p>Make the secret available at the specified time frame</p>
-          </li>
-          <li>
-            <p>Stay anonymous, we don't ask you to sign up or provide any identity</p>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
 
-  <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
-    <div class="card bg-c-green order-card">
-      <div class="card-block">
-        <h6 class="m-b-20">🧭 What can you do?</h6>
-        <hr>
-        <ul>
-          <li>
-            <p>Create a secret</p>
-          </li>
-          <li>
-            <p>Set when your secret becomes active</p>
-          </li>
-          <li>
-            <p>Set when your secret will expire and be deleted</p>
-          </li>
-          <li>
-            <p>Add additional key to your secret and share with the receiver</p>
-          </li>
-          <li>
-            <p class="m-b-0">Delete secret manually, on exact date, or by number of access attempts</p>
-          </li>
-          <li>
-            <p>Allow recipient to remove secret</p>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
-    <div class="card bg-c-yellow order-card">
-      <div class="card-block">
-        <h6 class="m-b-20">📚 Read me</h6>
-        <hr>
-        <ul>
-          <li>
-            <p>To protect your secret from brut-force, we limit each IP address to access the site to 2 times every 5 seconds</p>
-          </li>
-          <li>
-            <p>You can deploy a local instance of this application in your org ❤️</p>
-          </li>
-          <li>
-            <p>Don't forget to copy secret and removal links</p>
-          </li>
-          <li>
-            <p>Create your custom logic with <a [href]="this.swaggerAddress">API</a> integration</p>
-          </li>
-          <li>
-            <p>Have an idea, or would like to discuss something? Please join our <a href="https://github.com/MTokarev/secretary/discussions">
-              discussions on github</a>.</p>
-          </li>
-          <li>
-            <p>More information available <a routerLink="/about" >here</a></p>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-</div>
 
 <div *ngIf="this.showResult" class="card">
   <div class="card-body">
-    <h5 class="card-title">The secret has been created</h5>
+    <h5 class="card-title">Your Phrase has been Encrypted!</h5>
     <h6 class="card-subtitle mb-2 text-muted">Please make sure you copy the secret and removal links</h6>
     <p class="card-text">
       Link to the secret {{ (this.secretAddress + '?id=' + this.secretReturnDto.id) + (this.accessKeyEmpty ?
